@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PCE Attendance Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://ik.imagekit.io/syustaging/SYU_PREPROD/Priyadarshini-College-of-Engineering---_PCE_-_Nagpur-_Maharashtra_h82_JfujWf.webp?tr=w-3840" alt="PCE">
+            <span>Priyadarshni College of Engineering</span>
+        </div>
+        <div class="nav-user">
+            <span id="studentName">Loading...</span>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <div class="sidebar">
+            <ul>
+                <li class="active" data-page="overview"><i>📊</i> Overview</li>
+                <li data-page="attendance"><i>📈</i> Attendance</li>
+                <li data-page="records"><i>📋</i> Academic Records</li>
+                <li data-page="fees"><i>💰</i> Fee Status</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <!-- Overview Section -->
+            <div id="overview" class="page-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Overall Attendance</h3>
+                        <div class="stat-value" id="overallAttendance">85%</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="overallProgress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Classes</h3>
+                        <div class="stat-value" id="totalClasses">45</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Present Classes</h3>
+                        <div class="stat-value" id="presentClasses">38</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <h3>Low Attendance Subjects</h3>
+                        <div class="stat-value" id="lowAttendance">1</div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Attendance</h3>
+                    <div class="activity-list" id="recentAttendance">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Section -->
+            <div id="attendance" class="page-content">
+                <h2>Subject-wise Attendance</h2>
+                <div class="table-container">
+                    <table class="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Total Classes</th>
+                                <th>Present</th>
+                                <th>Absent</th>
+                                <th>Attendance %</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendanceTableBody">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Records Section -->
+            <div id="records" class="page-content">
+                <h2>Academic Records</h2>
+                <div class="records-grid">
+                    <div class="record-card">
+                        <h3>Current Semester: V</h3>
+                        <p>Branch: Computer Science</p>
+                        <p>Year: 2023-2027</p>
+                    </div>
+                    <div class="record-card">
+                        <h3>SGPA (Last Semester)</h3>
+                        <div class="grade">8.45</div>
+                    </div>
+                    <div class="record-card">
+                        <h3>CGPA</h3>
+                        <div class="grade">8.23</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fees Section -->
+            <div id="fees" class="page-content">
+                <h2>Fee Status</h2>
+                <div class="fee-cards">
+                    <div class="fee-card paid">
+                        <h3>Semester 4</h3>
+                        <span class="status">Paid</span>
+                    </div>
+                    <div class="fee-card pending">
+                        <h3>Semester 5</h3>
+                        <span class="status">Pending</span>
+                        <div class="due-date">Due: 15 Feb 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Dashboard specific JavaScript
+        loadDashboard();
+    </script>
+</body>
+</html>
